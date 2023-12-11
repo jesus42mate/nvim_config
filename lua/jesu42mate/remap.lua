@@ -14,7 +14,7 @@ vim.keymap.set("v", "<leader>y", "\"+y");
 vim.keymap.set("v", "<leader>Y", "\"+Y");
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]);
-vim.keymap.set("n", "<leader>0", ":nohlsearch<CR>:NoMatchParen<CR>");
+vim.keymap.set("n", "<leader>0", ":nohlsearch<CR>");
 
 
 vim.keymap.set("i", "{<CR>", "{<CR>}<C-o>O");
@@ -31,12 +31,27 @@ vim.keymap.set("n", "<C-k>", ":wincmd k<CR>");
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>");
 vim.keymap.set("n", "<C-h>", ":wincmd h<CR>");
 
--- open a terminal on the left side with a width of 70
-vim.keymap.set("n", "<leader>k", ":70vnew<CR>:terminal<CR>i");
+-- open a TERMINAL on the left side with a width of 70
+vim.keymap.set("n", "<leader>nk", ":new<CR>:terminal<CR>i");
+vim.keymap.set("n", "<leader>vk", ":vnew<CR>:terminal<CR>i");
+
+-- split the window
+vim.keymap.set("n", "<leader>sp", ":split_f<CR>")
+-- create new window
+vim.keymap.set("n", "<leader>n", ":new<CR>")
+-- create new window vertically 
+vim.keymap.set("n", "<leader>vn", ":vnew<CR>")
 
 -- change buffer size quickly
 vim.keymap.set("n", "<leader>-", ":wincmd 8 <<CR>");
 vim.keymap.set("n", "<leader>=", ":wincmd 8 ><CR>");
+vim.keymap.set("n", "<leader>_", ":wincmd 8 -<CR>");
+vim.keymap.set("n", "<leader>+", ":wincmd 8 +<CR>");
+
+
+
+-- set current folder as root proyect.
+--vim.keymap.set("n", )
 
 
 

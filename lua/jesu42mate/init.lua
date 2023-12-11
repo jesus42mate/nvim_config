@@ -1,20 +1,15 @@
 require("jesu42mate.remap");
 require("jesu42mate.set");
-
+require("jesu42mate.plugins.telescope")
 -- Welcome to my init.lua
 
 -- Requirements:
 -- NeoVim ^0.9
 
 -- Some important installations:
---
 -- 1. Lazy.nvim (github: folke/lazy.nvim)
--- 2. Add the plugins (they will be sourced after re-entering neovim
-
--- Baby Steps:
 
 -- 1. Lazy.nvim bootstrapping
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -28,34 +23,52 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local telescope_setup = function()
+	local telescope = require("telescope")
+	local actions = require("telescope.actions")
+
+	telescope.setup({
+		defaults = {
+			mappings = {
+				i = {
+					["<C-k>"] = actions.move_selection_previous,
+					["<C-j>"] = actions.move_selection_next,
+					["<C-q>"] = actions.send_to_qflist,
+
+				}
+			}
+		}
+	})
+end
+
+-- 2. Add the plugins (they will be sourced after re-entering neovim
 require("lazy").setup({
 	{
-		'nvim-telescope/telescope.nvim', tag = '0.1.5',
-		dependencies = { 'nvim-lua/plenary.nvim' }
+		'nvim-telescope/telescope.nvim',
+		tag = '0.1.5',
+		dependencies = { 'nvim-lua/plenary.nvim' },
+		config = telescope_setup
 	},
-	{'williamboman/mason.nvim'},
-	{'williamboman/mason-lspconfig.nvim'},
-
+	{"folke/neodev.nvim", opts = {}},
 	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+	{'williamboman/mason.nvim',
+	config = function()
+		local mason_lspconfig = require('mason-lspconfig')
+
+		mason_lspconfig.setup({
+			automatic_installation = true
+		})
+	end
+	},
+	{'williamboman/mason-lspconfig.nvim'},
+	{'windwp/nvim-autopairs', event = "InsertEnter", opts = {}},
 	{'neovim/nvim-lspconfig'},
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/nvim-cmp'},
 	{'L3MON4D3/LuaSnip'},
-	{
-		"ThePrimeagen/harpoon",
-		branch = "harpoon2",
-		requires = { {"nvim-lua/plenary.nvim"} }
-	}
+	{'mbbill/undotree'},
+	{"ThePrimeagen/harpoon", branch = "harpoon2", requires = { {"nvim-lua/plenary.nvim"}}},
+	{'fenetikm/falcon'},
+	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 });
-
---[[
-vim.api.nvim_create_autocmd({
-  pattern = { "*" }, -- Matches all buffers
-  buffer = true,
-  type = "BufEnter",
-  callback = function()
-    vim.api.nvim_command("NoMatchParen")
-  end,
-})
-]]--
 

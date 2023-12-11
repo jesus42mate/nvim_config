@@ -1,3 +1,4 @@
+vim.g.mapleader = " ";
 vim.opt.nu = true;
 vim.opt.relativenumber = true;
 
@@ -18,11 +19,9 @@ vim.opt.isfname:append("@-@");
 
 vim.opt.updatetime = 50;
 
-vim.api.nvim_set_option_value('matchpairs', false, {});
 
 --vim.opt.colorcolumn = "80";
 
-vim.g.mapleader = " ";
 
 --vim.keymap.set("n", "<leader>q", ":%s/\(");
 

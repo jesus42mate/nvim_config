@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-	color = color or "habamax";
+	color = color or "falcon";
 	vim.cmd.colorscheme(color);
 end
 
