@@ -52,6 +52,7 @@ require("lazy").setup({
 	{"folke/neodev.nvim", opts = {}},
 	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 	{'williamboman/mason.nvim',
+	{'neoclide/vim-jsx-improve'},
 	config = function()
 		local mason_lspconfig = require('mason-lspconfig')
 
@@ -70,5 +71,6 @@ require("lazy").setup({
 	{"ThePrimeagen/harpoon", branch = "harpoon2", requires = { {"nvim-lua/plenary.nvim"}}},
 	{'fenetikm/falcon'},
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+	{'nvim-tree/nvim-web-devicons'},
 });
 
