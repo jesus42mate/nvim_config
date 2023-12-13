@@ -72,5 +72,9 @@ require("lazy").setup({
 	{'fenetikm/falcon'},
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 	{'nvim-tree/nvim-web-devicons'},
+	{'windwp/nvim-ts-autotag'},
+	{'AndrewRadev/tagalong.vim'},
+
 });
+
 
