@@ -16,11 +16,12 @@ vim.keymap.set("v", "<leader>Y", "\"+Y");
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]);
 vim.keymap.set("n", "<leader>0", ":nohlsearch<CR>");
 
-
 vim.keymap.set("i", "{<CR>", "{<CR>}<C-o>O");
 vim.keymap.set("i", "[<CR>", "[<CR>]<C-o>O<Tab>");
 vim.keymap.set("n", "<leader><leader>", "i<Space><Esc>");
 
+-- save file
+vim.keymap.set("n", "<leader>w", ":w<CR>");
 
 -- check for mapping in certain keycomb
 vim.keymap.set("n", "<leader>m", ":imap ");
@@ -48,6 +49,8 @@ vim.keymap.set("n", "<leader>=", ":wincmd 8 ><CR>");
 vim.keymap.set("n", "<leader>_", ":wincmd 8 -<CR>");
 vim.keymap.set("n", "<leader>+", ":wincmd 8 +<CR>");
 
+-- Keymap to Open File Tree
+vim.keymap.set("n", "<Tab>", ":NvimTreeToggle<CR>");
 
 
 -- set current folder as root proyect.

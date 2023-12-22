@@ -1,6 +1,6 @@
 require("jesu42mate.remap");
 require("jesu42mate.set");
-require("jesu42mate.plugins.telescope")
+
 -- Welcome to my init.lua
 
 -- Requirements:
@@ -55,7 +55,6 @@ require("lazy").setup({
 	{'neoclide/vim-jsx-improve'},
 	config = function()
 		local mason_lspconfig = require('mason-lspconfig')
-
 		mason_lspconfig.setup({
 			automatic_installation = true
 		})
@@ -71,9 +70,9 @@ require("lazy").setup({
 	{"ThePrimeagen/harpoon", branch = "harpoon2", requires = { {"nvim-lua/plenary.nvim"}}},
 	{'fenetikm/falcon'},
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-	{'nvim-tree/nvim-web-devicons'},
 	{'windwp/nvim-ts-autotag'},
 	{'AndrewRadev/tagalong.vim'},
+	{'nvim-tree/nvim-tree.lua'},
 
 });
 
