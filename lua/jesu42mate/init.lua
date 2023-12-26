@@ -73,6 +73,7 @@ require("lazy").setup({
 	{'windwp/nvim-ts-autotag'},
 	{'AndrewRadev/tagalong.vim'},
 	{'nvim-tree/nvim-tree.lua'},
+	{'brenoprata10/nvim-highlight-colors'},
 
 });
 
