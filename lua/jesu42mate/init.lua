@@ -74,7 +74,11 @@ require("lazy").setup({
 	{'AndrewRadev/tagalong.vim'},
 	{'nvim-tree/nvim-tree.lua'},
 	{'brenoprata10/nvim-highlight-colors'},
-
+	{'nvim-treesitter/nvim-treesitter-context'},
+	{'github/copilot.vim'},
+	{"rebelot/kanagawa.nvim"},
+	{"folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }},
+	{"tpope/vim-surround"}
 });
 
 

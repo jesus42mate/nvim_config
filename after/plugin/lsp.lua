@@ -8,7 +8,7 @@ end)
 
 -- why is the mason setup here? no one knows.
 require('mason').setup({})
-require('mason-lspconfig').setup({
+require('mason-lspconfig').setup{
 	ensure_installed = {
 		'lua_ls',
 		'rust_analyzer',
@@ -18,7 +18,11 @@ require('mason-lspconfig').setup({
 	handlers = {
 		lsp_zero.default_setup,
 	},
-})
+}
 
+require('lspconfig').clangd.setup {
+	cmd = { "clangd", "--offset-encoding=utf-16" },
+
+}
 
 

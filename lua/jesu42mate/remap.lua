@@ -52,6 +52,12 @@ vim.keymap.set("n", "<leader>+", ":wincmd 8 +<CR>");
 -- Keymap to Open File Tree
 vim.keymap.set("n", "<Tab>", ":NvimTreeToggle<CR>");
 
+-- Keymaps to wrap stuff
+vim.keymap.set("v", "<leader>\"", "A\"<Esc>`<i\"<Esc>lel");
+vim.keymap.set("v", "<leader>{", "A}<Esc>`<i{<Esc>lel");
+vim.keymap.set("v", "<leader>[", "A]<Esc>`<i[<Esc>lel");
+
+ -- dddddddddddddddddddddddd
 
 -- set current folder as root proyect.
 --vim.keymap.set("n", )
