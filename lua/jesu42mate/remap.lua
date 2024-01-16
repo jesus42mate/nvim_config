@@ -56,6 +56,7 @@ vim.keymap.set("n", "<Tab>", ":NvimTreeToggle<CR>");
 vim.keymap.set("v", "<leader>\"", "A\"<Esc>`<i\"<Esc>lel");
 vim.keymap.set("v", "<leader>{", "A}<Esc>`<i{<Esc>lel");
 vim.keymap.set("v", "<leader>[", "A]<Esc>`<i[<Esc>lel");
+vim.keymap.set("v", "<leader>(", "A)<Esc>`<i(<Esc>lel");
 
  -- dddddddddddddddddddddddd
 
