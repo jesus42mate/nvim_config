@@ -26,6 +26,8 @@ vim.keymap.set("n", "<leader>w", ":w<CR>");
 -- check for mapping in certain keycomb
 vim.keymap.set("n", "<leader>m", ":imap ");
 
+vim.keymap.set("n", "<S-p>", ":tabnext<CR>");
+
 -- moving between buffers FAST
 vim.keymap.set("n", "<C-j>", ":wincmd j<CR>");
 vim.keymap.set("n", "<C-k>", ":wincmd k<CR>");
@@ -57,11 +59,12 @@ vim.keymap.set("v", "<leader>\"", "A\"<Esc>`<i\"<Esc>lel");
 vim.keymap.set("v", "<leader>{", "A}<Esc>`<i{<Esc>lel");
 vim.keymap.set("v", "<leader>[", "A]<Esc>`<i[<Esc>lel");
 vim.keymap.set("v", "<leader>(", "A)<Esc>`<i(<Esc>lel");
+vim.keymap.set("v", "<leader>'", "A'<Esc>`<i'<Esc>lel");
 
- -- dddddddddddddddddddddddd
-
--- set current folder as root proyect.
---vim.keymap.set("n", )
+-- Keymap to open terminal and execute cargo run
+vim.keymap.set("n", "<leader>mw", function()
+	-- TODO
+end)
 
 
 

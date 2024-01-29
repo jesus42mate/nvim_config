@@ -12,14 +12,14 @@ require("jesu42mate.set");
 -- 1. Lazy.nvim bootstrapping
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -52,13 +52,13 @@ require("lazy").setup({
 	{"folke/neodev.nvim", opts = {}},
 	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 	{'williamboman/mason.nvim',
-	{'neoclide/vim-jsx-improve'},
-	config = function()
-		local mason_lspconfig = require('mason-lspconfig')
-		mason_lspconfig.setup({
-			automatic_installation = true
-		})
-	end
+		{'neoclide/vim-jsx-improve'},
+		config = function()
+			local mason_lspconfig = require('mason-lspconfig')
+			mason_lspconfig.setup({
+				automatic_installation = true
+			})
+		end
 	},
 	{'williamboman/mason-lspconfig.nvim'},
 	{'windwp/nvim-autopairs', event = "InsertEnter", opts = {}},
@@ -78,7 +78,9 @@ require("lazy").setup({
 	{'github/copilot.vim'},
 	{"rebelot/kanagawa.nvim"},
 	{"folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" }},
-	{"tpope/vim-surround"}
+	{"tpope/vim-surround"},
+	{"duane9/nvim-rg"},
+	{{"lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}}},
 });
 
 

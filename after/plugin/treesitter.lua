@@ -8,7 +8,16 @@ require('nvim-treesitter.configs').setup({
 	},
 	auto_install = false,
 	indent = {
-		enable = true,
+		enable = function()
+			local current_filetype = vim.bo.filetype
+			print(current_filetype)
+			for _, ft in ipairs({ "tsx", "typescript", "jsx", "javascript" }) do
+				if current_filetype == ft then
+					return true
+				else return false
+				end
+			end
+		end,
 	},
 	autotag = {
 		enable = true
